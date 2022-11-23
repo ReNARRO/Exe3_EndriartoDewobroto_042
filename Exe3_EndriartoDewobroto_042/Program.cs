@@ -32,6 +32,19 @@ namespace Exe3_EndriartoDewobroto_042
             newNode.StudentNumber = nim;
             newNode.StudentName = nm;
 
+            //Check if the list empty
+            if (LAST == null || nim <= LAST.StudentNumber)
+            {
+                if ((LAST != null) && (nim == LAST.StudentNumber))
+                {
+                    Console.WriteLine();
+                    return;
+                }
+                newNode.next = LAST;
+                LAST = newNode;
+                return;
+            }
+
         }
     }
     internal class Program
