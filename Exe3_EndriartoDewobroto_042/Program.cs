@@ -20,6 +20,19 @@ namespace Exe3_EndriartoDewobroto_042
         {
             LAST = null;
         }
+        public void addnode()
+        {
+            int nim;
+            string nm;
+            Console.WriteLine("\nEnter the roll number of the student: ");
+            nim = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\nEnter the name of the student: ");
+            nm = Console.ReadLine();
+            Node newNode = new Node();
+            newNode.StudentNumber = nim;
+            newNode.StudentName = nm;
+
+        }
     }
     internal class Program
     {
