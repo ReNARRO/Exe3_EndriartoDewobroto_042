@@ -96,10 +96,28 @@ namespace Exe3_EndriartoDewobroto_042
                     LAST.next.StudentNumber + "      " + LAST.next.StudentName);
         }
     }
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
+            CircularList obj = new CircularList();
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("\nMenu");
+                    Console.WriteLine("1. View all the records in the list");
+                    Console.WriteLine("2. Search for records in the list");
+                    Console.WriteLine("3. Display the first record in the list");
+                    Console.WriteLine("4. Exit\n");
+                    Console.WriteLine("\nEnter your choice (1-4): ");
+                    char ch = Convert.ToChar(Console.ReadLine());
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                }
+            }
         }
     }
 }
