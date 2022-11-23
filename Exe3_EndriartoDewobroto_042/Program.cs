@@ -44,7 +44,23 @@ namespace Exe3_EndriartoDewobroto_042
                 LAST = newNode;
                 return;
             }
+            Node previous, current;
 
+
+        }
+        //Searches for the specified node
+        public bool Search(int nim, ref Node previous, ref Node current)
+        {
+            for (previous = current = LAST.next; current != LAST; previous = 
+                current, current = current.next)
+            {
+                if(nim == current.StudentNumber)
+                    return(true);//return if the node id found 
+            }
+            if(nim == LAST.StudentNumber)
+                return true;//if the node is present at the end
+            else
+                return false;//returns dalse if the node is not found
         }
     }
     internal class Program
