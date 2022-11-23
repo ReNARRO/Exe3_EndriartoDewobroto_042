@@ -13,6 +13,14 @@ namespace Exe3_EndriartoDewobroto_042
         public string StudentName;
         public Node next;
     }
+    class CircularList
+    {
+        Node LAST;
+        public CircularList()
+        {
+            LAST = null;
+        }
+    }
     internal class Program
     {
         static void Main(string[] args)
