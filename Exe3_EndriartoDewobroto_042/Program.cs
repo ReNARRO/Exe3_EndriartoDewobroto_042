@@ -87,6 +87,14 @@ namespace Exe3_EndriartoDewobroto_042
                 Console.Write(LAST.StudentNumber + "     " + LAST.StudentName + "\n");
             }
         }
+        public void firstNode()
+        {
+            if (listEmpty())
+                Console.WriteLine("\nList is empty");
+            else
+                Console.WriteLine("\nThe first record in the list is: \n\n" +
+                    LAST.next.StudentNumber + "      " + LAST.next.StudentName);
+        }
     }
     internal class Program
     {
