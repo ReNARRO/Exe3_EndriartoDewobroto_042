@@ -60,6 +60,20 @@ namespace Exe3_EndriartoDewobroto_042
             newNode.next = LAST.next;
             LAST.next = newNode;
         }
+        public void delNode(int studentNo)
+        {
+            Node previous, current;
+            previous = current = null;
+            if (Search(studentNo, ref previous, ref current) == false)
+                return false;
+            if (studentNo == LAST.next.StudentNumber)
+            {
+                current = LAST.next;
+                LAST.next = current.next;
+                return true;
+            }
+
+        }
         //Searches for the specified node
         public bool Search(int nim, ref Node previous, ref Node current)
         {
@@ -118,30 +132,59 @@ namespace Exe3_EndriartoDewobroto_042
                 try
                 {
                     Console.WriteLine("\nMenu");
-                    Console.WriteLine("1. View all the records in the list");
-                    Console.WriteLine("2. Search for records in the list");
-                    Console.WriteLine("3. Display the first record in the list");
-                    Console.WriteLine("4. Exit\n");
-                    Console.WriteLine("\nEnter your choice (1-4): ");
+                    Console.WriteLine("1. Add a record to the list");
+                    Console.WriteLine("2. Delete a record from the list");
+                    Console.WriteLine("3. View all the records in the list");
+                    Console.WriteLine("4. Search for records in the list");
+                    Console.WriteLine("5. Display the first record in the list");
+                    Console.WriteLine("6. Exit\n");
+                    Console.WriteLine("\nEnter your choice (1-6): ");
                     char ch = Convert.ToChar(Console.ReadLine());
                     switch (ch)
                     {
                         case '1':
                             {
-                                obj.traverse();
+                                obj.addnode();
                             }
                             break;
                         case '2':
                             {
+                                
+                            }
+                            break;
+                        case '3':
+                            {
+                                obj.traverse();
+                            }
+                            break;
+                        case '4':
+                            {
+                                if(obj.listEmpty() == true)
+                                {
+                                    Console.WriteLine("\nList is empty");
+                                    break;
+                                }
+                                Node prev, curr;
+                                prev = curr = null;
+                                Console.Write("\nEnter the roll number of the student whose record you want to search: ");
+                                int num = Convert.ToInt32(Console.ReadLine());
+                                if(obj.Search(num, ref prev, ref curr) == false)
+                                    Console.WriteLine("\nRecord not found");
+                                else
+                                {
+                                    Console.WriteLine("\nRecord found");
+                                    Console.WriteLine("\nRoll number: " + curr.StudentNumber);
+                                    Console.WriteLine("\nName: " + curr.StudentName);
+                                }
 
                             }
                             break ;
-                        case '3':
+                        case '5':
                             {
                                 obj.firstNode();
                             }
                             break;
-                        case '4':
+                        case '6':
                             return;
                         default:
                             {
