@@ -62,6 +62,13 @@ namespace Exe3_EndriartoDewobroto_042
             else
                 return false;//returns dalse if the node is not found
         }
+        public bool listEmpty()
+        {
+            if(LAST == null)
+                return true ;
+            else
+                return false ;
+        }
     }
     internal class Program
     {
