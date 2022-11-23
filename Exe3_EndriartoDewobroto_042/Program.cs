@@ -45,8 +45,20 @@ namespace Exe3_EndriartoDewobroto_042
                 return;
             }
             Node previous, current;
-
-
+            previous = LAST.next;
+            current = LAST.next;
+            while ((current != null) && (nim >= current.StudentNumber))
+            {
+                if(nim == current.StudentNumber)
+                {
+                    Console.WriteLine();
+                    return ;
+                }
+                previous.next = current;
+                previous.next = newNode;
+            }
+            newNode.next = LAST.next;
+            LAST.next = newNode;
         }
         //Searches for the specified node
         public bool Search(int nim, ref Node previous, ref Node current)
