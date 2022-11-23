@@ -112,6 +112,31 @@ namespace Exe3_EndriartoDewobroto_042
                     Console.WriteLine("4. Exit\n");
                     Console.WriteLine("\nEnter your choice (1-4): ");
                     char ch = Convert.ToChar(Console.ReadLine());
+                    switch (ch)
+                    {
+                        case '1':
+                            {
+                                obj.traverse();
+                            }
+                            break;
+                        case '2':
+                            {
+
+                            }
+                            break ;
+                        case '3':
+                            {
+                                obj.firstNode();
+                            }
+                            break;
+                        case '4':
+                            return;
+                        default:
+                            {
+                                Console.WriteLine("Invalid option");
+                                break ;
+                            }
+                    }
                 }
                 catch (Exception e)
                 {
