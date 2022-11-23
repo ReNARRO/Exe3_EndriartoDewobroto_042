@@ -69,6 +69,24 @@ namespace Exe3_EndriartoDewobroto_042
             else
                 return false ;
         }
+        public void traverse()//Traverses all the nodes of the list
+        {
+            if (listEmpty())
+                Console.WriteLine("\nList is empty");
+            else
+            {
+                Console.WriteLine("\nRecords in the list are: \n");
+                Node currentNode;
+                currentNode = LAST.next;
+                while (currentNode != LAST)
+                {
+                    Console.Write(currentNode.StudentNumber +
+                        "       " + currentNode.StudentName + "\n");
+                    currentNode = currentNode.next;
+                }
+                Console.Write(LAST.StudentNumber + "     " + LAST.StudentName + "\n");
+            }
+        }
     }
     internal class Program
     {
